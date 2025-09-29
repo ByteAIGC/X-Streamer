@@ -365,6 +365,58 @@
             .md\\:flex-row { flex-direction: row; }
             .md\\:text-left { text-align: left; }
         }
+
+        /* Navbar Dropdown Styles */
+        .navbar-item.has-dropdown {
+            position: relative;
+        }
+
+        .navbar-dropdown {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background-color: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            margin-bottom: 0.5rem;
+        }
+
+        .navbar-item.has-dropdown:hover .navbar-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .navbar-item {
+            position: relative;
+        }
+
+        .navbar-link {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .navbar-item .navbar-dropdown .navbar-item {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: background-color 0.15s;
+        }
+
+        .navbar-item .navbar-dropdown .navbar-item:hover {
+            background-color: var(--accent);
+            color: var(--accent-foreground);
+        }
     </style>
 </head>
 <body>
@@ -655,6 +707,34 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-4">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link btn btn-outline btn-sm font-medium">
+                                More Research
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" href="https://byteaigc.github.io/X-Actor/">
+                                    X-Actor
+                                </a>
+                                <a class="navbar-item" href="https://byteaigc.github.io/X-Unimotion/">
+                                    X-Unimotion
+                                </a>
+                                <a class="navbar-item" href="https://zeyuan-chen.com/X-Dancer/">
+                                    X-Dancer
+                                </a>
+                                <a class="navbar-item" href="https://x-dyna.github.io/xdyna.github.io/">
+                                    X-Dyna
+                                </a>
+                                <a class="navbar-item" href="https://byteaigc.github.io/X-Portrait2/">
+                                    X-NeMo (X-Portrait2)
+                                </a>
+                                <a class="navbar-item" href="https://byteaigc.github.io/x-portrait/">
+                                    X-Portrait
+                                </a>
+                                <a class="navbar-item" href="https://byteaigc.github.io/Lynx/">
+                                    Lynx
+                                </a>
+                            </div>
+                        </div>
                         <a href="https://arxiv.org/abs/2509.21574" class="btn btn-outline btn-sm font-medium">
                             <svg class="icon mr-2" viewBox="0 0 24 24">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
